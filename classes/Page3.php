@@ -15,7 +15,7 @@ class Page3
 	 * Content for page
 	 * @var [$string $content
 	 */
-	private $content;
+	private $content; // members or attributes 
     
     /**
      * Constructor for Page objects
@@ -29,16 +29,39 @@ class Page3
 
     /**
      * Get the title
-     * @return [type] [description]
+     * @return title
      */
-    public function title()
+    public function title() // title -  method
     {
     	return $this->title;
     }
-
+    
+    /**
+     * Get the content of the page
+     * @return content
+     */
     public function content()
     {
     	return $this->content;
     }
+
+    /**
+     * setTitle for the page
+     * @return  VOID
+     */
+    public function setTitle($title)
+    {
+      $this->title = $title;
+    }
+    
+    /**
+     * setContent for the page
+     * @return  VOID
+     */
+    public function setContent($content)
+    {
+      $this->content = $content;
+    }
+
 // enad of class
 }

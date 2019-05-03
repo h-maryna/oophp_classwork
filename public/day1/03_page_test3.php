@@ -10,7 +10,7 @@ $content = '<ul>
 </ul> ';
 $title = 'Support';
 
-$page3 = new Page3($title, $content); // without this arguments gives warning it expecting them
+$page3 = new Page3($title, $content); // without this arguments gives warning it's expecting them
 
 $new_title = 'New Title';
 
@@ -21,7 +21,7 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
  
-$page3->setTitle($new_title); // setting never return value
+$page3->setTitle($new_title); // setters never return value
 $page3->setContent($new_content); 
 
 ?><!DOCTYPE html>

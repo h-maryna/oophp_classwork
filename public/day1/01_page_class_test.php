@@ -1,42 +1,36 @@
 <?php
 
+require __DIR__ . '/../../config.php';
 
-
-$title = 'Page Class Test';
-
-// WE must include
+// We must include the class if we want to use it
 require __DIR__ . '/../../classes/Page.php';
-require __DIR__ . '/../../config/config.php';
+
 
 // We use the 'new' keyword to create an object from a class
 $page1 = new Page();
 
+// Add an attribute
 $page1->title = 'About us';
 
-//var_dump($page1);
-// -> :: scope resolution operators
+// -> :: scope resulution operators
 
-// add another operator
-$page1->content = '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+// Add another attribute
+$page1->content = '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>';
+
 
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
-	<title></title>
+	<meta charset="utf-8" />
+	<title><?=$page1->title?></title>
 </head>
 <body>
 
-<h1><?=$page1->title?></h1>
-    <?=$page1->content?>
+	<h1><?=$page1->title?></h1>
 
+	<?=$page1->content?>
 
 
 </body>

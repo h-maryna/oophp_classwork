@@ -4,11 +4,11 @@ namespace classes\Models;
 
 use classes\ModelInterface;
 
-class Book implements ModelInterface
+class Author implements ModelInterface
 {
 	public function all()
 	{
-        var_dump('BOOK All');
+        var_dump('AUTHOR All');
 	}
 
 	public function find($key)

@@ -5,14 +5,27 @@ namespace classes\Models;
 class Model
 {
 	protected $dbh;
+
+	// Inversion of Cpntrol: Design Patterb
+	// DEpendancy Injection: tactique, control
     
     // Dbh is a class
     // PDO is inrerface
     // \PDO go back to PDO
-	public function __construct(\PDO $dbh)
+    
+    /**
+     * This demonstrates Inversion of Control
+     * Instesd of having the calss know how to
+     * create its own database connection, we 
+     * pass in a connection of whatever type we like
+     * Our datbase must meet the specif of the 
+     * PDO Interface
+     * @param \PDO $dbh [description]
+     */
+    
+	public function __construct(\PDO $dbh) // dependancy injection
 	{    
 		$this ->dbh = $dbh; 
-        //$this->dbh = new \PDO(DB_DSN, DB_USER, DB_PASS); 
 	}
 
 	public function all()

@@ -14,7 +14,7 @@ class Model
     // Dbh is a class
     // PDO is inrerface
     // \PDO go back to PDO
-	public function __construct(\PDO $dbh)
+	public function __construct(\PDO $dbh) // dependancy injection
 	{    
 		$this ->dbh = $dbh; 
         //$this->dbh = new \PDO(DB_DSN, DB_USER, DB_PASS); 

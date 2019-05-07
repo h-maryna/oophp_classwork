@@ -26,9 +26,9 @@ class Router // static classes they can be used by other classes
     {   
     	static::setRawRequest();
     	static::setCleanRequest();
-    	var_dump('ROUTER INITILIZED');
-    	var_dump(static::$raw_request);
-    	var_dump(static::$clean_request);
+    	//var_dump('ROUTER INITILIZED');
+    	//var_dump(static::$raw_request);
+    	//var_dump(static::$clean_request);
     	//var_dump($getRoutes);
     	//var_dump($postRoutes);
 
@@ -66,8 +66,8 @@ class Router // static classes they can be used by other classes
 
     public static function showRoutes()
     {
-        var_dump(static::$getRoutes);
-    	var_dump(static::$postRoutes);
+        //var_dump(static::$getRoutes);
+    	//var_dump(static::$postRoutes);
     }
 
     /* Dispatch functionlaity -- eventually should be removed to its own class
@@ -78,7 +78,7 @@ class Router // static classes they can be used by other classes
         if('GET' == $_SERVER['REQUEST_METHOD']){
         	$request = static::$clean_request;
         	$routes = static::$getRoutes;
-
+            if(empty($request)) $request = 'home';
             if(array_key_exists($request, $routes))
             {
                call_user_func($routes[$request]);
@@ -86,7 +86,13 @@ class Router // static classes they can be used by other classes
         }
 
         if('POST' == $_SERVER['REQUEST_METHOD']){
-        	
+            $request = static::$clean_request;
+        	$routes = static::$postRoutes;
+            if(empty($request)) $request = 'home';
+            if(array_key_exists($request, $routes))
+            {
+               call_user_func($routes[$request]);
+            }
         }
     }
 

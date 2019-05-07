@@ -2,18 +2,29 @@
 
 use App\Framework\Router as Route;
 
+Route::get('home', function(){
+    App\Controllers\PageController::home();
+});
+
 Route::get('about', function(){
-    echo '<h1>About Us!</h1>';
+    App\Controllers\PageController::about();
 });
 
 Route::get('shop', function(){
-    echo '<h1>Shop for Clothes!</h1>';
+    App\Controllers\PageController::shop();
 });
 
 Route::get('contact', function(){
-    echo '<h1>Please our contact form!</h1>';
+    App\Controllers\PageController::contact();
 });
 
 Route::post('contact', function(){
-    var_dump($_POST);
+    App\Controllers\PageController::contact_send();
+});
+
+
+/*--Book routers ------------------------*/
+
+Route::get('/books', function(){
+    App\Controllers\BooksController::index();
 });

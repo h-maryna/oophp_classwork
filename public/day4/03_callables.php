@@ -27,7 +27,7 @@ echo call_user_func('myTest');
 
 function doSomething(Callable $some_func){
 	if(is_callable($some_func)){
-	//call_user_func($some_func);
+	call_user_func($some_func);
 } else {
 	throw new Exception('Hey, please pass a function');
   }
@@ -36,6 +36,8 @@ function doSomething(Callable $some_func){
 doSomething(function(){
     echo 'I am being passed as a parameter';
 });
+
+
 
 ?><!DOCTYPE html>
 <html lang="en">

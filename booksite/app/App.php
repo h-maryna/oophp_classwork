@@ -23,6 +23,8 @@ class App
 	public function initRouter()
 	{
 		Router::init();
+		require __DIR__ . '/../routes.php';
+		Router::showRoutes();
 	}
     /**
      * Initialized Models
@@ -32,8 +34,12 @@ class App
 	{
 		global $dbh;
 		Model::init($dbh);
-		var_dump('MODEL INITIATED');
 
+	}
+
+	public function run()
+	{
+		Router::dispatch();
 	}
 
 

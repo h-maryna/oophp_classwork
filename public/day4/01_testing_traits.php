@@ -6,7 +6,9 @@ use classes\Vehicles\Truck;
 
 $truck = new Truck('Truck');
 
-var_dump($truck);
+echo $truck->startEngine(); // Vroom Vroom
+
+echo $truck->stopEngine(); // Cough!
 
 ?><!DOCTYPE html>
 <html lang="en">

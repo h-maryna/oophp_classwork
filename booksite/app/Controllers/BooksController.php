@@ -16,4 +16,14 @@ class BooksController extends Controller
 		$books = $model->all();
         View::show('books/index', compact('title', 'books')); // lookf for title and books and puts it into array
 	}
+
+	public static function show($id)
+	{   
+		$title = 'Book List';
+		$model = new Books();
+		$book = $model->find($id);
+        View::show('books/show', compact('title', 'book')); // lookf for title and books and puts it into array
+	}
+
+
 }

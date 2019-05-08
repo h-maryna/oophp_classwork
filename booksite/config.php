@@ -1,20 +1,13 @@
 <?php
 
-ob_start();
-session_start();
-// define your base path
-define('BASE_PATH', __DIR__);
+$settings = array (
+	'site_name' => 'Booksite',
+	'base_path' => __DIR__,
+	'db_user' => 'root',
+	'db_pass' => '',
+	'db_dns' =>  'mysql:host=localhost;dbname=booksite',
+	'view_path' => __DIR__ . '/app/Views',
+	'routes_file' => __DIR__ . '/routes2.php'
+);
 
-
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_DSN', 'mysql:host=localhost;dbname=booksite');
-
-$dbh = new PDO(DB_DSN, DB_USER, DB_PASS);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//show errors in browser
-ini_set('display_errors', 1);
-
-//Show every kind of error, even warnings
-ini_set('error_reporting', E_ALL);
+return $settings;

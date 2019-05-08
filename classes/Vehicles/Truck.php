@@ -24,7 +24,7 @@ class Truck extends Wheeled
 
 	public function test()
 	{   
-		// you throw an ex ception and system catch it
+		// you throw an exception and system catch it
 		throw new WheeledException('There has been a Wheeled error!');
 		//The next line with a PDO exception
 		//$dbh = new \PDO('fsdfasd', 'sdaga', 'faswe');

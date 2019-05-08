@@ -2,14 +2,21 @@
 
 namespace App;
 
-use \App\Framework\Router;
+use \App\Framework\RegexRouter as Router;
 use \App\Framework\View;
 use \App\Framework\Model;
 class App
-{
-	public function __construct()
+{   
+	/**
+	 * Inversion of control cintainer
+	 * @var Pimple Container
+	 */
+	
+	private $c;
+
+	public function __construct(\Pimple\Container $c)
 	{   
-        //var_dump('APP INSTANTIATED');
+        $this->c = $c;
 
 		$this->initRouter();
 
@@ -20,8 +27,8 @@ class App
 
 	private function initView()
 	{
-        $view_path = __DIR__ . '/Views';
-        View::init($view_path);
+        
+        View::init($this->c['view_path']);
 	}
     /**
      * Initialized the router
@@ -30,8 +37,7 @@ class App
 	public function initRouter()
 	{
 		Router::init();
-		require __DIR__ . '/../routes.php';
-		Router::showRoutes();
+		require $this->c['routes_file'];
 	}
     /**
      * Initialized Models
@@ -39,8 +45,7 @@ class App
      */
 		public function initModels()
 	{
-		global $dbh;
-		Model::init($dbh);
+		Model::init($this->c['dbh']);
 
 	}
 

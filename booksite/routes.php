@@ -1,15 +1,20 @@
 <?php
 
-use App\Framework\Router as Route;
+use App\Framework\RegexRouter as Route;
 
+// /^\/?([a-z]+)\/?$/
 Route::get('home', function(){
     App\Controllers\PageController::home();
 });
 
+// /^\/?([a-z]+)\/?$/
+//  0 = about
+//  1 = about
 Route::get('about', function(){
     App\Controllers\PageController::about();
 });
 
+// /^\/?([a-z]+)\/?$/
 Route::get('shop', function(){
     App\Controllers\PageController::shop();
 });

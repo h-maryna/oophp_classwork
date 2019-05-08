@@ -11,7 +11,21 @@
 <h1><?=$title?></h1>
 
 <?php var_dump($books) ?>
-
+<table>
+	<tr>
+		<th>Book _Id</th>
+		<th>Title</th>
+		<th>Year Published</th>
+		<th>Num pages</th>
+		<th>Format</th>
+	</tr>
+	<tr>
+		<?php foreach ($books as $key => $row) {
+			$field_name = 
+		} 
+		?>
+    </tr>
+</table>
 
 </body>
 </html>
